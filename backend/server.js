@@ -5,6 +5,7 @@ import {v2 as cloudinary} from "cloudinary";
 
 import authRoutes from "./routes/auth.routes.js"; // only one import
 import userRoutes from "./routes/user.routes.js"; // ensure to import this if using it
+import postRoutes from "./routes/post.routes.js";
 
 import connectMongoDB from './db/connectMongoDB.js';
 
@@ -26,6 +27,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes); // this should be correctly imported
+app.use("/api/posts", postRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
