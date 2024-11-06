@@ -35,7 +35,7 @@ const EditProfileModal = ({ authUser }) => {
 	return (
 		<>
 			<button
-				className='btn btn-outline rounded-full btn-sm'
+				className='btn bg-gradient-to-r from-blue-500 to-pink-500 btn-outline rounded-full btn-sm hover:bg-white'
 				onClick={() => document.getElementById("edit_profile_modal").showModal()}
 			>
 				Edit profile
