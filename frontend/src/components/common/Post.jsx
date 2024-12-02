@@ -229,15 +229,15 @@ const Post = ({ post }) => {
 							<div className='flex gap-1 items-center group cursor-pointer' onClick={handleLikePost}>
 								{isLiking && <LoadingSpinner size='sm' />}
 								{!isLiked && !isLiking && (
-									<FaRegHeart className='w-4 h-4 cursor-pointer text-slate-500 group-hover:text-pink-500' />
+									<FaRegHeart className='w-4 h-4 cursor-pointer text-slate-500 group-hover:text-[#fc0307]' />
 								)}
 								{isLiked && !isLiking && (
-								  <FaRegHeart className='w-4 h-4 cursor-pointer text-pink-500 ' />
+								  <FaRegHeart className='w-4 h-4 cursor-pointer text-[#fc0307] ' />
 								)}
 
 								<span
-									className={`text-sm  group-hover:text-pink-500 ${
-										isLiked ? "text-pink-500" : "text-slate-500"
+									className={`text-sm  group-hover:text-[#fc0307] ${
+										isLiked ? "text-[#fc0307]" : "text-slate-500"
 									}`}
 								>
 									{post.likes.length}

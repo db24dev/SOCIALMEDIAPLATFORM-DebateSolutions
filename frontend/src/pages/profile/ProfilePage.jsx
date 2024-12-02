@@ -100,7 +100,7 @@ const ProfilePage = () => {
 								/>
 								{isMyProfile && (
 									<div
-										className='absolute top-2 right-2 rounded-full p-2 bg-gradient-to-r from-blue-500 to-pink-500 bg-opacity-75 cursor-pointer opacity-0 group-hover/cover:opacity-100 transition duration-200'
+										className='absolute top-2 right-2 rounded-full p-2 bg-gradient-to-r from-[#0703fc] to-[#fc0307] bg-opacity-75 cursor-pointer opacity-0 group-hover/cover:opacity-100 transition duration-200'
 										onClick={() => coverImgRef.current.click()}
 									>
 										<MdEdit className='w-5 h-5 text-white' />
@@ -125,7 +125,7 @@ const ProfilePage = () => {
 								<div className='avatar absolute -bottom-16 left-4'>
 									<div className='w-32 rounded-full relative group/avatar'>
 										<img src={profileImg || user?.profileImg || "/avatar-placeholder.png"} />
-										<div className='absolute top-5 right-3 p-1 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full group-hover/avatar:opacity-100 opacity-0 cursor-pointer'>
+										<div className='absolute top-5 right-3 p-1 bg-gradient-to-r from-[#0703fc] to-[#fc0307] rounded-full group-hover/avatar:opacity-100 opacity-0 cursor-pointer'>
 											{isMyProfile && (
 												<MdEdit
 													className='w-4 h-4 text-white'
@@ -178,7 +178,7 @@ const ProfilePage = () => {
 													href='https://youtube.com/@asaprogrammer_'
 													target='_blank'
 													rel='noreferrer'
-													className='text-sm text-blue-500 hover:underline'
+													className='text-sm text-[#0703fc] hover:underline'
 												>
 													youtube.com/@asaprogrammer_
 												</a>
@@ -205,21 +205,21 @@ const ProfilePage = () => {
 							</div>
 							<div className='flex w-full border-b border-gray-700 mt-4'>
 								<div
-									className='flex justify-center flex-1 p-3 hover:bg-blue-500 transition duration-300 relative cursor-pointer'
+									className='flex justify-center flex-1 p-3 hover:bg-[#0703fc] hover:text-white transition duration-300 cursor-pointer relative'
 									onClick={() => setFeedType("posts")}
 								>
 									Posts
 									{feedType === "posts" && (
-										<div className='absolute bottom-0 w-10 h-1 rounded-full bg-secondary' />
+										<div className='absolute bottom-0 w-10  h-1 rounded-full bg-[#fc0307]' />
 									)}
 								</div>
 								<div
-									className='flex justify-center flex-1 p-3 text-black hover:bg-blue-500 transition duration-300 relative cursor-pointer'
+									className='flex justify-center flex-1 p-3 hover:bg-[#0703fc] hover:text-white transition duration-300 cursor-pointer relative'
 									onClick={() => setFeedType("likes")}
 								>
 									Likes
 									{feedType === "likes" && (
-										<div className='absolute bottom-0 w-10  h-1 rounded-full bg-secondary' />
+										<div className='absolute bottom-0 w-10  h-1 rounded-full bg-[#fc0307]'/>
 									)}
 								</div>
 							</div>
