@@ -64,11 +64,11 @@ const LoginPage = () => {
 				<form className='flex gap-4 flex-col' onSubmit={handleSubmit}>
 					<XSvg className='w-24 lg:hidden fill-white' />
 					<h1 className='text-4xl font-extrabold text-white'>{"Let's"} go.</h1>
-					<label className='input input-bordered rounded flex items-center gap-2'>
-						<MdOutlineMail />
+					<label className='border-2 border-black input input-bordered rounded flex items-center gap-2'>
+						<MdOutlineMail className="ml-4" />
 						<input
 							type='text'
-							className='grow'
+							className='outline-none p-2 grow'
 							placeholder='username'
 							name='username'
 							onChange={handleInputChange}
@@ -76,28 +76,28 @@ const LoginPage = () => {
 						/>
 					</label>
 
-					<label className='input input-bordered rounded flex items-center gap-2'>
-						<MdPassword />
+					<label className='border-2 border-black input input-bordered rounded flex items-center gap-2'>
+						<MdPassword className="ml-4" />
 						<input
 							type='password'
-							className='grow'
+							className='outline-none p-2 grow'
 							placeholder='Password'
 							name='password'
 							onChange={handleInputChange}
 							value={formData.password}
 						/>
 					</label>
-					<button className='btn rounded-full btn-primary text-black border-black hover:text-white bg-white hover:bg-gradient-to-r hover:from-[#0703fc] hover:to-[#fc0303]'>
+					<button className='border-2 p-3 btn rounded-full btn-primary text-black border-black hover:text-white bg-white hover:bg-gradient-to-r hover:from-[#0703fc] hover:to-[#fc0303]'>
 					  {isPending ? "Loading..." : "Login"}	
 					</button>
 					{isError && <p className='text-red-500'>
 						{error.message}
 						</p>}
 				</form>
-				<div className='flex flex-col gap-2 mt-4'>
+				<div className='flex flex-col'>
 					<p className='text-white text-lg'>{"Don't"} have an account?</p>
 					<Link to='/signup'>
-						<button className='btn rounded-full btn-primary text-black border-black hover:text-white bg-white hover:bg-gradient-to-r hover:from-[#0703fc] hover:to-[#fc0303] w-full'>Sign up</button>
+						<button className='border-2 p-3 btn rounded-full btn-primary text-black border-black hover:text-white bg-white hover:bg-gradient-to-r hover:from-[#0703fc] hover:to-[#fc0303] w-full'>Sign up</button>
 					</Link>
 				</div>
 			</div>
