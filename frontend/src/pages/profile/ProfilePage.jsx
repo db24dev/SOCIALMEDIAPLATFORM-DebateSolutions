@@ -15,7 +15,7 @@ import { useQuery } from "@tanstack/react-query";
 import { formatMemberSinceDate } from "../../utils/date";
 
 import useFollow from "../../hooks/useFollow";
-import useUpdateUserProfile, { useUpdateProfilePicture } from "../../hooks/useUpdateUserProfile";
+import useUpdateUserProfile, { useUpdateProfilePicture, useUpdateCoverPhoto } from "../../hooks/useUpdateUserProfile";
 
 const ProfilePage = () => {
     const [coverImg, setCoverImg] = useState(null);
@@ -25,7 +25,7 @@ const ProfilePage = () => {
 	const coverImgRef = useRef(null);
 	const profileImgRef = useRef(null);
 	const { updateProfilePicture, isUpdatingProfilePicture } = useUpdateProfilePicture();
-
+	const { updateCoverPhoto, isUpdatingCoverPhoto} = useUpdateCoverPhoto();
 	const { username } = useParams();
 
 	const { follow, isPending }= useFollow();
@@ -33,6 +33,9 @@ const ProfilePage = () => {
     useEffect(()=>{
     updateProfilePicture(profileImg)
 	},[profileImg])
+	useEffect(()=>{
+	updateCoverPhoto(coverImg)
+	},[coverImg])
 	const { 
 	  data: user,
 	  isLoading, 
