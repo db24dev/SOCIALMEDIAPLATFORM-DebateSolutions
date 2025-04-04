@@ -30,12 +30,7 @@ const ProfilePage = () => {
 
 	const { follow, isPending }= useFollow();
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
-    useEffect(()=>{
-    updateProfilePicture(profileImg)
-	},[profileImg])
-	useEffect(()=>{
-	updateCoverPhoto(coverImg)
-	},[coverImg])
+    
 	const { 
 	  data: user,
 	  isLoading, 
@@ -70,6 +65,8 @@ const ProfilePage = () => {
 			reader.onload = () => {
 				state === "coverImg" && setCoverImg(reader.result);
 				state === "profileImg" && setProfileImg(reader.result);
+				state === "coverImg" && updateCoverPhoto(reader.result);
+				state === "profileImg" && updateProfilePicture(reader.result);
 			};
 			reader.readAsDataURL(file);
 		}
